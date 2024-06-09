@@ -1,0 +1,79 @@
+{% extends 'nav.html' %}
+{% block nav %}
+{% load static %}
+        <div class="container-fluid h-custom">
+            {% if messages %}
+            {% for i in messages %}
+            {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="alert alert-success">
+              {{i}}
+            </div>
+            {% endif %}
+            {% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger">
+              {{i}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        <h4>Welcome to Egadgets, <span>{{request.user.username}}</span></h4>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'images/ecom22.jpg' %}" class="d-block w-100 " style="height: 500px; " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/ecom19.jpg' %}" class="d-block w-100" style="height: 500px;" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/ecom18.jpeg' %}" class="d-block w-100" style="height: 500px;" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/ec1.jpg' %}" class="d-block w-100" style="height: 500px;" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+            <div class="w-100 p-5 mt-4 d-flex justify-content-evenly">
+            <div class="card" style="width: 18rem;">
+              <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1708674029/Croma%20Assets/Communication/Mobiles/Images/300665_0_vveh9a.png" class="card-img-top"width="100%" height="200px" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">Smart Phone</h5>
+                <a href="{% url 'prod' 'smart phone' %}" class="stretched-link"></a>
+              </div>
+            </div>
+              
+              <div class="card" style="width: 18rem;">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/9/341511143/YU/SA/XA/189434614/nvxevnmc.jpeg" class="card-img-top"width="100%" height="200px" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Smart Watch</h5>
+                  <a href="{% url 'prod' 'smart watches' %}" class="stretched-link"></a>
+                </div>
+              </div>
+
+                <div class="card" style="width: 18rem;">
+                  <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-silver-wifi_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1670856131868" class="card-img-top"width="100%" height="200px" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Tablets</h5>
+                    <a href="{% url 'prod' 'tablets' %}" class="stretched-link"></a>
+                  </div>
+                </div>
+          
+
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/12/LZ/HI/BA/107901374/photo-1491472253230-a044054ca35f-apple-jpg.jpg" class="card-img-top"width="100%" height="200px" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Laptops</h5>
+                      <a href="{% url 'prod' 'laptops' %}" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+            </div>
+{% endblock nav %}
